@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/script.js"></script>
+    
+    <title>Seja Voluntário - ONG Mãos que Transformam</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>ONG Mãos que Transformam</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="cadastro.html">Seja Voluntário</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <h2>Seja Voluntário</h2>
+
+        <p>
+            Preencha o formulário abaixo para demonstrar
+            seu interesse em participar dos nossos projetos.
+        </p>
+
+
+        <form>
+
+    <fieldset>
+    <legend>Dados pessoais</legend>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="telefone">Telefone:</label>
+    <input 
+        type="tel" 
+        id="telefone" 
+        name="telefone"
+        pattern="[0-9]{10,11}"
+        placeholder="Digite o telefone"
+        title="Digite um telefone com 10 ou 11 números">
+
+    <label for="cpf">CPF:</label>
+    <input 
+        type="text" 
+        id="cpf" 
+        name="cpf"
+        pattern="[0-9]{11}"
+        placeholder="Digite apenas os 11 números"
+        title="Digite o CPF com 11 números">
+
+    <label for="nascimento">Data de nascimento:</label>
+    <input type="date" id="nascimento" name="nascimento">
+
+    <label for="cep">CEP:</label>
+    <input 
+        type="text" 
+        id="cep" 
+        name="cep"
+        pattern="[0-9]{8}"
+        placeholder="Digite apenas os 8 números"
+        title="Digite o CEP com 8 números">
+    </fieldset>
+
+    <button type="submit">Enviar cadastro</button>
+
+</form>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 ONG Mãos que Transformam
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

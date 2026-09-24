@@ -1,0 +1,422 @@
+:root {
+    /* CORES */
+    --cor-primaria: #2e7d6b;
+    --cor-primaria-escura: #245f52;
+    --cor-secundaria: #4caf8a;
+    --cor-destaque: #f2c14e;
+    --cor-fundo: #f4f7f6;
+    --cor-neutra-clara: #ffffff;
+    --cor-neutra-media: #e0e0e0;
+    --cor-texto: #333333;
+
+    /* TIPOGRAFIA */
+    --fonte-xs: 0.875rem;
+    --fonte-sm: 1rem;
+    --fonte-md: 1.25rem;
+    --fonte-lg: 1.875rem;
+    --fonte-xl: 2.5rem;
+
+    /* ESPAÇAMENTOS */
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+    --espaco-6: 48px;
+    --espaco-7: 64px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-sm);
+    line-height: 1.6;
+}
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-clara);
+    padding: var(--espaco-4);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav {
+    margin-top: var(--espaco-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-2);
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--cor-neutra-clara);
+    text-decoration: none;
+    margin: 0 var(--espaco-2);
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    max-width: 1200px;
+    margin: var(--espaco-6) auto;
+    padding: 0 var(--espaco-3);
+}
+h1 {
+    font-size: var(--fonte-xl);
+}
+
+h2 {
+    color: var(--cor-primaria);
+    font-size: var(--fonte-lg);
+}
+
+h3 {
+    color: var(--cor-primaria);
+    font-size: var(--fonte-md);
+}
+article {
+    background-color: var(--cor-neutra-clara);
+    padding: var(--espaco-3);
+    margin: var(--espaco-4) 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+footer {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-neutra-clara);
+    text-align: center;
+    padding: var(--espaco-4);
+    margin-top: var(--espaco-6);
+}
+form {
+    background-color: var(--cor-neutra-clara);
+    padding: var(--espaco-5);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: var(--espaco-2);
+    font-weight: bold;
+}
+section img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: var(--espaco-3) auto;
+    border-radius: 10px;
+}
+/* ==============================
+   GRID PRINCIPAL - 12 COLUNAS
+   ============================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-3);
+    width: 100%;
+}
+
+.grid-item {
+    grid-column: span 12;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+/* 1º breakpoint - telas pequenas */
+@media (min-width: 480px) {
+    .grid-item {
+        grid-column: span 6;
+    }
+}
+
+/* 2º breakpoint - tablets pequenos */
+@media (min-width: 600px) {
+    .grid-item {
+        grid-column: span 4;
+    }
+}
+
+/* 3º breakpoint - tablets */
+@media (min-width: 768px) {
+    .grid-item {
+        grid-column: span 3;
+    }
+}
+
+/* 4º breakpoint - notebooks e desktops */
+@media (min-width: 1024px) {
+    .grid-item {
+    grid-column: span 4;
+}
+
+    .grid-container {
+        gap: var(--espaco-4);
+    }
+}
+
+/* 5º breakpoint - desktops panorâmicos */
+@media (min-width: 1440px) {
+    .grid-item {
+        grid-column: span 2;
+    }
+
+    .grid-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+/* ==============================
+   MENU DROPDOWN
+   ============================== */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-primaria-escura);
+    min-width: 200px;
+    padding: var(--espaco-2);
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    margin: 0;
+    padding: var(--espaco-2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* ==============================
+   BOTÃO MENU HAMBÚRGUER
+   ============================== */
+
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--cor-neutra-clara);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   MENU EM DISPOSITIVOS MÓVEIS
+   ============================== */
+
+@media (max-width: 767px) {
+
+    .menu-toggle {
+        display: block;
+        margin: var(--espaco-2) auto;
+    }
+
+    nav.menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.menu.active {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+/* ==============================
+   ESTADOS DOS BOTÕES
+   ============================== */
+
+button,
+input[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-clara);
+    border: 2px solid var(--cor-primaria);
+    padding: var(--espaco-2) var(--espaco-4);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Quando passa o mouse */
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--cor-primaria-escura);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Quando recebe foco pelo teclado */
+button:focus,
+input[type="submit"]:focus {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+/* Enquanto o botão está sendo pressionado */
+button:active,
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Quando o botão está desabilitado */
+button:disabled,
+input[type="submit"]:disabled {
+    background-color: var(--cor-neutra-media);
+    color: var(--cor-texto);
+    border-color: var(--cor-neutra-media);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+/* ==============================
+   VALIDAÇÃO VISUAL DO FORMULÁRIO
+   ============================== */
+
+input:valid,
+textarea:valid,
+select:valid {
+    border: 2px solid var(--cor-secundaria);
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border: 2px solid #d9534f;
+}
+/* ==============================
+   BADGES
+   ============================== */
+
+.badge {
+    display: inline-block;
+    padding: var(--espaco-1) var(--espaco-2);
+    margin-right: var(--espaco-1);
+    border-radius: 20px;
+    font-size: var(--fonte-xs);
+    font-weight: bold;
+}
+
+.badge-ativo {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-neutra-clara);
+}
+
+.badge-arrecadacao {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+}
+
+.badge-voluntario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-clara);
+}
+/* ==============================
+   ALERTA
+   ============================== */
+
+.alerta {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    border-left: 5px solid var(--cor-primaria);
+    padding: var(--espaco-3);
+    margin: var(--espaco-4) 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* ==============================
+   MODAL
+   ============================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+    background-color: var(--cor-neutra-clara);
+    width: 90%;
+    max-width: 500px;
+    padding: var(--espaco-5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: var(--espaco-2);
+    right: var(--espaco-2);
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: none;
+    font-size: 1.8rem;
+    padding: var(--espaco-1);
+}
+
+.fechar-modal:hover {
+    background-color: var(--cor-neutra-media);
+}
+
+.modal-conteudo a {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-clara);
+    padding: var(--espaco-2) var(--espaco-4);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.modal-conteudo a:hover {
+    background-color: var(--cor-primaria-escura);
+}
