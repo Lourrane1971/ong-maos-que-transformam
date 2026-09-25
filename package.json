@@ -1,0 +1,28 @@
+{
+  "name": "projeto-1",
+  "version": "1.0.0",
+  "description": "Projeto front-end desenvolvido para a ONG Mãos que Transformam.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lourrane1971/ong-maos-que-transformam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lourrane1971/ong-maos-que-transformam/issues"
+  },
+  "homepage": "https://github.com/Lourrane1971/ong-maos-que-transformam#readme",
+  "devDependencies": {
+    "sharp": "^0.35.4",
+    "vite": "^8.3.1"
+  }
+}
